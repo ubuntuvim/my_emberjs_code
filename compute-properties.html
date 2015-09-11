@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides</title>
+    
+<!--    <link rel="stylesheet" href="style.css">-->
+    
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+<!--  <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.js"></script>-->
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<!--    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember-testing.js"></script>-->
+<!--    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember-template-compiler.js"></script>-->
+    
+<!--    <script src="emberjs/ember-data.js.map"></script>-->
+ 
+ 
+<script type="text/javascript">
+Person = Ember.Object.extend({
+    firstName: null,
+    lastName: null,
+    
+    //  fullName 就是一个计算属性
+    fullName: Ember.computed('firstName', 'lastName', function() {
+        return this.get('firstName') + ", " + this.get('lastName');
+    })
+});
+
+//  实例化同时传入参数
+var piter = Person.create({
+    firstName: 'chen',
+    lastName: 'ubuntuvim'
+});
+console.log(piter.get('fullName'));  // output >>   chen, ubuntuvim
+    
+//     
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>

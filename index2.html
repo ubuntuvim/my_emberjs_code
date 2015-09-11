@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ember.js • TodoMVC</title>
+  
+  <link rel="stylesheet" href="emberjs/style.css">
+</head>
+<body>
+  <script type="text/x-handlebars" data-template-name="todos">
+
+  <section id="todoapp">
+    <header id="header">
+      <h1>todos</h1>
+      <input type="text" id="new-todo" placeholder="What needs to be done?" />
+    </header>
+
+      <section id="main">
+        <ul id="todo-list">
+          {{#each todo in model}}
+            <li>
+              <input type="checkbox" class="toggle">
+              <label>{{todo.title}}</label><button class="destroy"></button>
+            </li>
+          {{/each}}
+        </ul>
+
+        <input type="checkbox" id="toggle-all">
+      </section>
+
+      <footer id="footer">
+        <span id="todo-count">
+          <strong>2</strong> todos left</span>
+        <ul id="filters">
+          <li>
+            <a href="all" class="selected">All</a>
+          </li>
+          <li>
+            <a href="active">Active</a>
+          </li>
+          <li>
+            <a href="completed">Completed</a>
+          </li>
+        </ul>
+
+        <button id="clear-completed">
+          Clear completed (1)
+        </button>
+      </footer>
+  </section>
+
+  <footer id="info">
+    <p>Double-click to edit a todo</p>
+  </footer>
+  
+  </script>
+
+  <script src="emberjs/jquery.min.js"></script>
+  <script src="emberjs/handlebars.js"></script>
+  <script src="emberjs/ember.js"></script>
+  <script src="emberjs/ember-data.js"></script>
+  
+    
+  <script src="emberjs/test.js"></script>
+  
+</body>
+</html>
+

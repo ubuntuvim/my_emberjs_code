@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides • Observer</title>
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<script type="text/javascript">
+// Observer对于Emberjs来说非常重要，前面你看到的很多代码都是与它有关系，计算属性之所以能更新也是因为它
+Person = Ember.Object.extend({
+  firstName: null,
+  lastName: null,
+
+  fullName: Ember.computed('firstName', 'lastName', function() {
+    return this.get('firstName') + " " + this.get('lastName');
+  }),
+
+  //  当fullName被改变的时候触发观察者
+  fullNameChange: Ember.observer('fullName', function() {
+    console.log("The fullName is changed by caller");
+    //return this.get('fullName');
+  })
+});
+
+//  在Person类中增加一个方法
+Person.reopen({
+  firstNameChange: Ember.observer('firstName', function() {
+    console.log('The firstName is changing...');
+    // return this.get('fullName');
+  })
+});
+
+Person.reopen({
+  lastNameChange: Ember.observer('lastName', function() {
+    // console.log('The fullName is ' + this.get('fullName') + ' in lastNameChange method');
+    console.log('The lastName is changing...');
+    // return this.get('fullName');
+  })
+});
+
+Person.reopen({
+  partOfNameChange: Ember.observer('firstName', 'lastName', function() {
+    console.log('111');
+  })
+});
+
+var person = Person.create({
+  firstName: 'chen',
+  lastName: 'ubuntuvim'
+});
+
+
+// console.log('fullName = ' + person.get('fullName'));
+console.log(person.get('fullName'));  //  对于计算属性，只有调用过get方法才会触发观察者
+person.set('firstName', '[change firstName]')
+// console.log('fullName = ' + person.get('fullName'));  
+person.set('lastName', '[change lastName value]');  // 观察者会被触发
+// console.log('fullName = ' + person.get('fullName'));
+console.log(person.get('fullName'));
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>

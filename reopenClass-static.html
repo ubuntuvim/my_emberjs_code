@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides</title>
+    
+<!--    <link rel="stylesheet" href="style.css">-->
+    
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+<!--  <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.js"></script>-->
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<!--    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember-testing.js"></script>-->
+<!--    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember-template-compiler.js"></script>-->
+    
+<!--    <script src="emberjs/ember-data.js.map"></script>-->
+ 
+ 
+<script type="text/javascript">
+Parent = Ember.Object.extend();   
+    
+//  使用reopenClass()方法添加新的static属性、方法
+Parent.reopenClass({
+    isPerson: true,
+//    name: '123'  //  不能设置String类型的属性！！！，报Uncaught TypeError: Cannot assign to read only property 'name'
+});
+
+Parent.reopen({
+    isPerson: false,
+    name: 'ubuntuvim'
+});
+console.log(Parent.isPerson);
+console.log(Parent.name);  //  输出空
+console.log(Parent.create().get('isPerson'));
+console.log(Parent.create().get('name'));    //  输出 ubuntuvim
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>

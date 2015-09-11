@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides</title>
+    
+<!--    <link rel="stylesheet" href="style.css">-->
+    
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+<!--  <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.js"></script>-->
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<!--    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember-testing.js"></script>-->
+<!--    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember-template-compiler.js"></script>-->
+    
+<!--    <script src="emberjs/ember-data.js.map"></script>-->
+ 
+ 
+<script type="text/javascript">
+Person = Ember.Object.extend({
+    
+  say(thing) {
+    var name = this.get('name');
+    console.log(name + " says: " + thing);
+  }
+});
+
+Soldier = Person.extend({
+    
+  say(thing) {
+    // this will call the method in the parent class (Person#say), appending
+    // the string ", sir!" to the variable `thing` passed in
+    this._super(thing + ", sir!");
+  }
+});
+
+var yehuda = Soldier.create({
+  name: "Yehuda Katz"
+});
+
+yehuda.say("Yes"); // alerts "Yehuda Katz says: Yes, sir!"
+</script>
+  </head>
+   
+   
+  <body>
+  
+  
+  
+  </body>
+  
+  
+
+</html>

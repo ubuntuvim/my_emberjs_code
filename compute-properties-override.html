@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides</title>
+    
+<!--    <link rel="stylesheet" href="style.css">-->
+    
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+ 
+<script type="text/javascript">
+//    重写计算属性的get、set方法
+Person = Ember.Object.extend({
+    firstName: null,
+    lastName: null,
+    
+    //  重写计算属性fullName的get、set方法
+    fullName: Ember.computed('firstName', 'lastName', {
+        get(key) {
+            return this.get('firstName') + "," + this.get('lastName');
+        },
+        set(key, value) {
+            //  这个官方文档使用的代码，但是我运行的时候出现 Uncaught SyntaxError: Unexpected token [  这个错误，不知道是否是缺少某个文件，后续会补上；
+//            console.log("value = " + value);
+//            var [ firstName, lastName ] = value.split(/\s+/);  
+            var firstName = value.split(/\s+/)[0];
+            var lastName = value.split(/\s+/)[1];
+            this.set('firstName', firstName);
+            this.set('lastName', lastName);
+            
+        }
+    }),
+//    对于普通的属性无法重写get、set方法
+//    firstName: Ember.computed('firstName', {
+//        get(key) {
+//            return this.get('firstName') + "@@";
+//        },
+//        set(key, value) {
+//            this.set('firstName', value);
+//        }
+//    })
+});
+    
+var jack = Person.create();    
+jack.set('fullName', "james kobe");
+console.log(jack.get('firstName'));
+console.log(jack.get('lastName'));
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>

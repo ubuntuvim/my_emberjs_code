@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides</title>
+    
+<!--    <link rel="stylesheet" href="style.css">-->
+    
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+<!--  <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.js"></script>-->
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<!--    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember-testing.js"></script>-->
+<!--    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember-template-compiler.js"></script>-->
+    
+<!--    <script src="emberjs/ember-data.js.map"></script>-->
+ 
+ 
+<script type="text/javascript">
+Person = Ember.Object.extend({
+    name: 'ubuntuvim'
+});
+// Ember 推荐的访问方式
+var person = Person.create();
+console.log("My name is " + person.get('name'));
+person.set('name', "Tobias Funke");
+console.log("My name is " + person.get('name'));  
+ 
+console.log("---------------------------");
+//  不推荐的方式
+var person2 = Person.create();   
+console.log("My name is " + person2.name);
+person2.name = "Tobias Funke";
+console.log("My name is " + person2.name);
+</script>
+  </head>
+   
+   
+  <body>
+  
+  
+  
+  </body>
+  
+  
+
+</html>

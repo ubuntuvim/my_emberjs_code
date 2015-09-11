@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides</title>
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<script type="text/javascript">
+Task = Ember.Object.extend({
+  isDone: false,  //  默认为false
+  name: 'taskName',
+  //  为了显示结果方便，重写toString()方法
+  toString: function() {
+    return '[name = '+this.get('name')+', isDone = '+this.get('isDone')+']';
+  }
+}); 
+
+WorkerLists = Ember.Object.extend({
+  //  定义一个Task对象数组
+  lists: [
+    Task.create({ isDone: false, name: 'ibeginner.sinaapp.com' }),
+    Task.create({ isDone: true, name: 'i2cao.xyz' }),
+    Task.create(),
+    Task.create({ isDone: true, name: 'ubuntuvim' }),
+    Task.create({ isDone: true , name: '1527254027@qq.com'}),
+    Task.create({ isDone: true })
+  ],
+
+  index: null,
+  indexOfSelectedTodo: Ember.computed('index', 'lists.[]', function() {
+    return this.get('lists').objectAt(this.get('index'));
+  })
+});
+
+
+var wl = WorkerLists.create();
+//  所有isDone属性值未做任何修改
+var index = 1;
+wl.set('index', index);
+console.log('Get '+wl.get('indexOfSelectedTodo').toString()+' by index ' + index);
+
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>

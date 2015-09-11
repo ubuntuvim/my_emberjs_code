@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides • Observer</title>
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<script type="text/javascript">
+// Observer对于Emberjs来说非常重要，前面你看到的很多代码都是与它有关系，计算属性之所以能更新也是因为它
+Person = Ember.Object.extend({
+  firstName: null,
+  lastName: null,
+
+  fullName: Ember.computed('firstName', 'lastName', function() {
+    return this.get('firstName') + " " + this.get('lastName');
+  }),
+
+  //  当fullName被改变的时候触发观察者
+  fullNameChange: Ember.observer('fullName', function() {
+    console.log("The fullName is changed by caller");
+    //return this.get('fullName');
+  })
+});
+
+var person = Person.create({
+  firstName: 'chen',
+  lastName: 'ubuntuvim'
+});
+// 如果被观察的计算属性还没执行过get()方法不会触发观察者，原因后面的章节会说明
+console.log('fullName = ' + person.get('fullName'));  
+//  fullName是依赖firstName和lastName的，这里改变了firstName的值，计算属性会自动更新，
+//  fullName被改变了所以会触发观察者
+person.set('firstName', 'change firstName value');  // 观察者会被触发
+console.log('fullName = ' + person.get('fullName'));
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>

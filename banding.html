@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides • 双向绑定</title>
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<script type="text/javascript">
+// 双向绑定
+Wife = Ember.Object.extend({
+  householdIncome: 800
+});
+var wife = Wife.create();
+
+Hasband = Ember.Object.extend({
+  //  使用 alias方法实现绑定
+  householdIncome: Ember.computed.alias('wife.householdIncome')
+});
+
+hasband = Hasband.create({
+  wife: wife
+});
+
+console.log('householdIncome = ' + hasband.get('householdIncome'));  //  output > 800
+// 可以双向设置值
+
+//  在wife方设置值
+wife.set('householdIncome', 1000);
+console.log('householdIncome = ' + hasband.get('householdIncome'));  // output > 1000
+// 在hasband方设置值
+hasband.set('householdIncome', 10);
+console.log('wife householdIncome = ' + wife.get('householdIncome'));
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>

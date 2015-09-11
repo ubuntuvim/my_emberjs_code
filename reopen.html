@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides</title>
+    
+<!--    <link rel="stylesheet" href="style.css">-->
+    
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+<!--  <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.js"></script>-->
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<!--    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember-testing.js"></script>-->
+<!--    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember-template-compiler.js"></script>-->
+    
+<!--    <script src="emberjs/ember-data.js.map"></script>-->
+ 
+ 
+<script type="text/javascript">
+Parent = Ember.Object.extend({
+    name: 'ubuntuvim',
+    fun1() {
+        console.log("The name is " + this.name);
+    },
+    common() {
+       console.log("common method..."); 
+    }
+});   
+
+//  使用extend()方法添加新的属性、方法
+Child1 = Parent.extend({
+    //  给类Parent为新增一个属性
+    pwd: '12345',
+    //  给类Parent为新增一个方法
+    fun2() {
+        console.log("The pwd is " + this.pwd);
+    },
+    //    重写父类的common()方法
+    common() {
+        //console.log("override common method of parent...");
+        this._super();
+    }
+});
+    
+var c1 = Child1.create();
+console.log("name = " + c1.get('name') + ", pwd = " + c1.get('pwd'));   
+c1.fun1();
+c1.fun2();     
+c1.common();
+console.log("-----------------------");    
+    
+//  使用reopen()方法添加新的属性、方法
+Parent.reopen({
+    //  给类Parent为新增一个属性
+    pwd: '12345',
+    //  给类Parent为新增一个方法
+    fun2() {
+        console.log("The pwd is " + this.pwd);
+    },
+    //  重写类本身common()方法
+    common() {
+        console.log("override common method by reopen method...");
+        //this._super();
+    }
+});
+var p = Parent.create();    
+console.log("name = " + p.get('name') + ", pwd = " + p.get('pwd'));   
+p.fun1();
+p.fun2();    
+p.common();
+console.log("---------------------------");    
+
+//  使用extend()方法添加新的属性、方法
+Child2 = Parent.extend({
+    //  给类Parent为新增一个属性
+    pwd: '12345',
+    //  给类Parent为新增一个方法
+    fun2() {
+        console.log("The pwd is " + this.pwd);
+    },
+    //    重写父类的common()方法
+    common() {
+        //console.log("override common method of parent...");
+        this._super();
+    }
+});    
+var c2 = Child2.create();
+console.log("name = " + c2.get('name') + ", pwd = " + c2.get('pwd'));   
+c2.fun1();
+c2.fun2(); 
+c2.common();
+</script>
+  </head>
+   
+   
+  <body>
+  
+  
+  
+  </body>
+  
+  
+
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides • Observer</title>
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<script type="text/javascript">
+// Observer对于Emberjs来说非常重要，前面你看到的很多代码都是与它有关系，计算属性之所以能更新也是因为它
+Person = Ember.Object.extend({
+  firstName: null,
+  lastName: null,
+
+  fullName: Ember.computed('firstName', 'lastName', function() {
+    return this.get('firstName') + " " + this.get('lastName');
+  }),
+
+  //  当fullName被改变的时候触发观察者
+  fullNameChange: Ember.observer('fullName', function() {
+    console.log("The fullName is changed by caller");
+    //return this.get('fullName');
+  })
+});
+Person.reopen({
+  partOfNameChanged: Ember.observer('firstName', 'lastName', function() {
+    //  同时观察了firstName和lastName两个属性
+    //  方法partOfNameChanged本身还是会执行多次，但是方法processFullName只会执行一次
+    console.log('========partOfNameChanged======');  //  
+    Ember.run.once(this, 'processFullName');
+  }),
+  processFullName: Ember.observer('fullName', function() {
+    // 当你同时设置多个属性的时候，此观察者只会执行一次，并且是发生在下一次所有属性都被同步的时候
+    console.log('fullName = ' + this.get('fullName'));
+  })
+});
+
+var person = Person.create({
+  firstName: 'chen',
+  lastName: 'ubuntuvim'
+});
+
+person.set('firstName', '[firstName]');
+person.set('lastName', '[lastName]');
+
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>

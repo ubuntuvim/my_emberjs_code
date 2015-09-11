@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides</title>
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<script type="text/javascript">
+Task = Ember.Object.extend({
+  isDone: false  //  默认为false
+}); 
+
+WorkerLists = Ember.Object.extend({
+  //  定义一个Task对象数组
+  lists: [
+    Task.create({ isDone: false }),
+    Task.create({ isDone: true }),
+    Task.create(),
+    Task.create({ isDone: true }),
+    Task.create({ isDone: true }),
+    Task.create({ isDone: true }),
+    Task.create({ isDone: false }),
+    Task.create({ isDone: true })
+  ],
+
+  remaining: Ember.computed('lists.@each.isDone', function() {
+    var lists = this.get('lists');
+    //  查询属性isDone值为false的对象，并返回其数量
+    return lists.filterBy('isDone', false).get('length');
+  })
+});
+
+// 如下代码使用到的API请查看：http://emberjs.com/api/classes/Ember.MutableArray.html
+var wl = WorkerLists.create();
+//  所有isDone属性值未做任何修改
+console.log('1,>> Not complete lenght is ' + wl.get('remaining'));  //  output 3
+var lists = wl.get('lists');  //  得到对象内的数组
+
+// -----  演示第一种情况： 1. 在todos数组中任意一个对象的isDone属性值发生变化的时候；
+//  修改数组一个元素的isDone的 值
+var item1 = lists.objectAt(3);  //  得到第4个元素 objectAt()方法是Ember为我们提供的
+// console.log('item1 = ' + item1);
+item1.set('isDone', false);
+console.log('2,>> Not complete lenght is ' + wl.get('remaining'));  //  output 4
+
+//  --------- 2.  往todos数组新增元素的时候；
+lists.pushObject(Task.create({ isDone: false }));  //新增一个isDone为false的对象
+console.log('3,>> Not complete lenght is ' + wl.get('remaining'));  //  output 5
+
+//  --------- 3.  从todos数组删除元素的时候；
+lists.removeObject(item1);  // 删除了一个元素
+console.log('4,>> Not complete lenght is ' + wl.get('remaining'));  //  output 4
+
+//  --------- 4.  在控制器中todos数组被改变为其他的数组的时候；
+//  创建一个Controller
+TodosController = Ember.Controller.extend({
+  // 在控制器内定义另外一个Task对象数组
+  todosInController: [
+    Task.create({ isDone: false }),
+    Task.create({ isDone: true })
+  ],
+  //  使用键”@each.isDone“遍历得到的filterBy()方法过滤后的对象的isDone属性
+  remaining: function() {
+    //  remaining()方法返回的是控制器内的数组
+    return this.get('todosInController').filterBy('isDone', false).get('length');
+  }.property('@each.isDone')  //  指定遍历的属性
+});
+todosController = TodosController.create();
+var count = todosController.get('remaining');
+console.log('5,>> Not complete lenght is ' + count);  //  output 1
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>

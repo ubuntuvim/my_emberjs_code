@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides • 单向绑定</title>
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<script type="text/javascript">
+var user = Ember.Object.create({
+  fullName: 'Kara Gates'
+});
+
+UserComponent = Ember.Component.extend({
+  userName: Ember.computed.oneWay('user.fullName')
+});
+
+userComponent = UserComponent.create({
+  user: user
+});
+
+console.log('fullName = ' + user.get('fullName'));
+// 从user可以设置
+user.set('fullName', "krang Gates");
+console.log('component>> ' + userComponent.get('userName'));
+// UserComponent 设置值，user并不能获取，因为是单向的绑定
+userComponent.set('fullName', "ubuntuvim");
+console.log('user >>> ' + user.get('fullName'));
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>

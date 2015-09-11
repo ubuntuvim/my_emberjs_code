@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides</title>
+    
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+    
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<script type="text/javascript">
+const Hamster = Ember.Object.extend({
+  chores: null,
+  excitingChores: Ember.computed('chores.[]', function() {//告诉Ember chores是一个数组
+    return this.get('chores').map(function(chore, index) {
+      //return `${index} --> ${chore.toUpperCase()}`;  //  可以使用${}表达式，并且在表达式内可以直接调用js方法
+      return `${chore}`;  //返回元素值
+    });
+  })
+});
+
+//  为数组赋值
+const hamster = Hamster.create({
+  //  名字chores要与类Hamster定义指定数组的名字一致
+  chores: ['First Value', 'write more unit tests']
+});
+
+console.log(hamster.get('excitingChores'));
+hamster.get('chores').pushObject("Add item test");  //add an item to chores array
+console.log(hamster.get('excitingChores'));
+
+</script>
+ 
+ 
+  </head>  
+   
+  <body>
+  </body>
+
+</html>
