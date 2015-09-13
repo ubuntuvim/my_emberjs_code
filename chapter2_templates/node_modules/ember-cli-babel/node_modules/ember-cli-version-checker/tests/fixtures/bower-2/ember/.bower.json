@@ -1,0 +1,21 @@
+{
+  "name": "ember",
+  "main": [
+    "./ember.debug.js",
+    "./ember-template-compiler.js"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.7.0 < 2.2.0"
+  },
+  "homepage": "https://github.com/components/ember",
+  "_release": "2b5eace34b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "release",
+    "commit": "2b5eace34b97f2f9e5f6ee268593f0a2f688d167"
+  },
+  "_source": "git://github.com/components/ember.git",
+  "_target": "release",
+  "_originalSource": "ember",
+  "_direct": true
+}

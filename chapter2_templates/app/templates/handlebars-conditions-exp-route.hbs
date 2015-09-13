@@ -1,0 +1,31 @@
+<!-- app/templates/handlebars-conditions-exp-route.hbs -->
+
+<!-- if判断标签，当熟悉model的值不为 false, undefined, null or [] 的时候显示标签内的内容 -->
+{{#if model}}
+Welcome back, <b>{{model.name}}</b> !
+{{/if}}
+
+<br><br>
+
+<!-- if……else……判断 -->
+{{#if model.isAtWork}}
+Ship that code..<br>
+{{else if model.isReading}}
+You can finish War and Peace eventually..<br>
+{{else}}
+This is else block...
+{{/if}}
+
+
+<br><br>
+
+<!-- 非判断 -->
+{{#unless model.isReading}}
+unless.....
+{{/unless}}
+
+<br><br>
+
+
+<!-- 可以把表达式直接嵌入在某个标签中，当enable的值为true则结果是增加了一个类(css的类)enable，否则增加'disable' -->
+<span class={{if enable 'enable' 'disable'}}>enable or disable</span>
