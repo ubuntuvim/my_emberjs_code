@@ -1,0 +1,45 @@
+<!--  //  app/templates/posts.hbs  -->
+
+<!--
+	<div class="row">
+		<div class="col-md-4 col-xs-4">
+			
+			<ul class="list-group">
+
+				<li class="list-group-item">
+					{{#link-to 'posts.detail' 100 class='active'}}
+					posts.detail.comments（/posts/1）形式
+					{{/link-to}}
+				</li>
+
+				<li class="list-group-item">
+					{{#link-to 'posts.detail.comments' 1 class='active'}}
+					posts.detail.comments（/posts/1/comments）形式
+					{{/link-to}}
+				</li>
+
+				<li class="list-group-item">
+					{{#link-to 'posts.detail.comment' 1 2 class='active'}}
+					posts.detail.comment（posts/1/comments/2）形式
+					{{/link-to}}
+				</li>
+			</ul>
+			
+
+			{{model.routeName}}
+		</div>
+
+		<div class="col-md-8 col-xs-8">
+			
+		</div>
+	</div>
+-->
+
+<!-- 所有的子路由对应的模板都会渲染到outlet上 -->
+{{model.routeName}}
+
+{{outlet}}
+
+posts渲染完成
+
+	

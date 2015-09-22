@@ -1,0 +1,17 @@
+<!-- // app/templates/handlebars.hbs -->
+
+{{! 遍历在route里设置的对象数组 }}
+<ul>
+	{{#each model as |item index|}}
+		<li>{{index}} Hello everyone, My name is {{item.name}} and {{item.age}} year old.</li>
+	{{/each}}
+</ul>
+
+<br><br><br>
+
+{{! 空数组处理，如果从route返回的model为空，则会执行else代码块的代码 }}
+{{#each model as |item|}}
+	Hello, {{item.name}}
+{{else}}
+	Sorry, nobody is here.
+{{/each}}

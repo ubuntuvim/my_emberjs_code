@@ -1,0 +1,16 @@
+<!-- // app/templates/posts/detail.hbs -->
+
+<!-- 所有的子路由对应的模板都会渲染到outlet上 -->
+{{outlet}}
+
+
+{{link-to "show text info" "posts.detail" 1 class="btn btn-primary"}}
+
+{{#link-to "posts.detail" 1 class="btn btn-primary"}}show text info{{/link-to}}
+
+<!-- 在当前页面打开连接，使用replace=true设置 -->
+{{#link-to 'application' class="btn btn-primary" replace=true}}在本页面打开连接{{/link-to}}
+
+
+
+

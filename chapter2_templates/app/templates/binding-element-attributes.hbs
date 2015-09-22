@@ -1,0 +1,18 @@
+<!-- //  app/templates/binding-element-attribute.hbs -->
+
+<div id="logo">
+	<img src={{model.imgUrl}} alt='logo' />
+</div>
+
+<br><hr>
+
+{{! 当isEnable为true时候，disabled为true，不可用；否则可用}}
+<input type='checkbox' disabled={{model.isEnable}} />
+
+
+<br><hr>
+{{! 绑定到data-xxx这种属性需要特殊设置}}
+{{#link-to 'binding-element-attributes' data-toggle='dropdown'}}link-to{{/link-to}}<br>
+{{input type='text' data-toggle='tooltip' data-placement='bottom' title="Name"}}
+
+

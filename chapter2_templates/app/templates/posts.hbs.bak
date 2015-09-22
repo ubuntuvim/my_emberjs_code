@@ -1,0 +1,40 @@
+<!--  //  app/templates/posts.hbs  -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-10 col-xs-10">
+			<div style="margin-top: 70px;">
+				<ul class="list-group">
+					<li class="list-group-item">
+						<!-- 注意此时只有一个动态段，所以只有一个数字1，Ember会根据次序自动匹配到动态段的位置上。 -->
+						{{#link-to 'posts.detail.comments' 1 class='active'}}
+						posts.detail.comments（posts/1/comments）形式
+						{{/link-to}}
+					</li>
+
+
+					<li class="list-group-item">
+						<!--
+						注意此时有2个动态段，所以有2个数字1，2，Ember会根据次序自动匹配到动态段的位置上。
+						第一个数字1会匹配到第一个动态段post_id上，第二个数字2会匹配到动态段comment_id上
+						 -->
+						{{#link-to 'posts.detail.comment' 1 2 class='active'}}
+						posts.detail.comment（posts/1/2）形式
+						{{/link-to}}
+					</li>
+
+
+					<li class="list-group-item">
+						<!--
+							一共设置了4层路由
+						 -->
+						{{#link-to 'posts.detail.comments.comment' 1 2 class='active'}}
+						posts.detail.comments.comment（posts/1/comments/2）形式
+						{{/link-to}}
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+<!--  //  app/templates/myaction.hbs  -->
+
+
+
+<!-- showDetailInfo这个事件的名字必须要跟controller里的方法名字一致 -->
+<h2 {{action 'showDetailInfo'}} style="cursor: pointer;">{{model.title}}</h2>
+{{#if isShowingBody}}
+<p>
+{{model.body}}
+</p>
+{{/if}}
+
+<br><br>
+<p>
+<!-- model直接作为参数传递到controller -->
+<button {{action 'hitMe' model}}>点击我吧</button>
+<br>
+<a href="#/myaction" {{action 'triggerMe' on="mouseOver"}}>键盘按下时触发我</a>
+</p>
+
+<br><br>
+<button {{action 'pressALTKeyTiggerMe' allowedKeys="alt"}}>按下Alt触发我</button>
+
+<br><br>
+<a href="http://www.baidu.com" {{action "showDetailInfo"}}>
+点我跳转
+</a>
+
+<br><br>
+<label>失去焦点时候触发</label>
+<input type="text" value={{textValue}} onblur={{action 'bandDidChange' value="target.value"}} />
+
+<br><br>
+<div {{action "hitMe1"}}>无CSS设置的div标签</div>
+<div {{action "hitMe2"}} style="cursor: pointer;">有CSS设置的div标签</div>

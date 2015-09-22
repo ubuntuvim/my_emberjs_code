@@ -1,0 +1,17 @@
+{{! //app/templates/form-helper.hbs }}
+
+
+{{input name="username" placeholder="your name" value="model.helloworld"}}
+<br><br>
+{{input name="username" placeholder="your name" value=helloworld}}
+
+<br><br>
+按enter键触发
+{{input value=getValueKey enter="getInputValue" name=getByName placeholder="请输入测试的内容"}}
+
+<br><br>
+checkbox
+{{input type="checkbox" checked=isChecked }}
+
+<br><br>
+{{textarea value=key cols="80" rows="3" enter="getValueByV"}}

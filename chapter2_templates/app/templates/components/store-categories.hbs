@@ -1,0 +1,22 @@
+<!-- // templates/components/store-categories.hbs -->
+
+<script type="text/x-handlebars">
+<ul>
+  {{#each-in categories as |category products|}}
+    <li>{{category}}
+      <ol>
+        {{#each products key="@item" as |product|}}
+          <li>{{product}}</li>
+        {{/each}}
+      </ol>
+    </li>
+  {{/each-in}}
+</ul>
+</script>
+
+
+<br><br><br>
+<hr>
+{{#each-in model as |item|}}
+{{item.name}}
+{{/each-in}}

@@ -1,0 +1,28 @@
+<!--  //app/templates/tools-helper.hbs  -->
+
+my-helper: {{my-helper}}
+<br><br><br>
+
+my-helper-param: {{my-helper 'chen' 'ubuntuvim'}}
+<br><br><br>
+
+my-helper-named-param: {{my-helper firstName='chen' lastName='ubuntuvim'}}
+<br><br><br>
+
+
+currentDate: {{format-date currentDate}}
+<br><br><br>
+
+format-date-yyyy-mm-dd: {{format-date-yyyy-mm-dd currentDate format="yyyy-MM-dd"}}
+
+
+<br><br><br>
+format-date-time: {{format-date-time currentDate cDate currentTime format="yyyy-MM-dd h:mm:ss"}}
+
+
+<br><br><br>
+format-date-time-local: {{format-date-time currentDate cDate currentTime format="yyyy-MM-dd h:mm:ss" locale="en"}}
+
+
+<br><br><br>
+escape-helper: {{escape-helper "helloworld!"}}

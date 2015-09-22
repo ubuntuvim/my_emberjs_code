@@ -1,21 +1,35 @@
 <!-- app/templates/application.hbs -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+            <div class="navbar-header" href="#">
+                    <a class="navbar-brand" href="#">Blog</a>
+            </div>
+            <ul class="nav navbar-nav">
+                    <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+        <!--
+        {{#if auth.authed}}
+                    <li>{{#link-to 'posts.'}}Add New Post{{/link-to}}</li>
+        {{/if}}
+        -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Logout</a></li>
+                
+                <!--    {{#unless auth.authed}}
+                    <li><a href="#" {{action 'login' on='click'}}>Login</a></li>
+                    {{else}}
+                    <li><a href="#" {{action 'logout' on='click'}}>Logout</a></li>
+                    {{/unless}}
+                    -->
+            </ul>
+    </div>
+</nav>
 
-<div class="container-fluid">
-
-<!--
-<header>
-	<h1>ubuntuvim's Blog</h1>
-</header>
--->
-
-<div>
-	<!-- 所有的模板都会渲染到这里 -->
-	{{outlet}}
-</div>
+<div class="container-fluid" style="margin-top: 70px;">
+    <!-- 所有的子路由对应的模板都会渲染到这里 -->
+    {{outlet}}
+</div> <!-- // container-fluid -->
 
 
-<footer class='footer'>
-	&copy;2015 ubuntuvim's Publishing,Inc
-</footer>
 
-</div>

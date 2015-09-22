@@ -1,0 +1,17 @@
+	<!-- app/templates/dev-helper.hbs -->
+
+	直接显示在页面上：{{testName}}
+	{{log testName}}
+
+<br>
+{{log '这句话在断点前面'}}
+{{!debugger}}
+<br>
+{{log '这句话在断点后面'}}
+
+
+<br><br><br>
+{{#each model as |item|}}
+	{{debugger}}
+{{/each}}
+

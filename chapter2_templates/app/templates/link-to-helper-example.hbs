@@ -1,0 +1,7 @@
+<!-- // app/templates/link-to-helper-example.hbs -->
+
+<ul>
+	{{#each model as |item|}}
+	<li>{{#link-to 'link-to-helper-example.edit' item}}{{item.name}}{{/link-to}}</li>
+	{{/each}}
+</ul>
