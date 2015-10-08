@@ -1,1 +1,0 @@
-/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/jshinter-output_path-19hNG69r.tmp/test-helper.jshint.js

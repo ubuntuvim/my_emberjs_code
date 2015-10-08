@@ -1,1 +1,0 @@
-/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/funnel-input_base_path-7pbC1OyD.tmp/0/app-prefix.js

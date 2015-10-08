@@ -1,1 +1,0 @@
-/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/funnel-input_base_path-NOCkNb0p.tmp/0/testem.js

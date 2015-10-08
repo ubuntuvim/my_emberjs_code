@@ -1,1 +1,0 @@
-/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/template_compiler-tmp_dest_dir-FtXzFo5x.tmp/chapter3-routes2/templates/about.js

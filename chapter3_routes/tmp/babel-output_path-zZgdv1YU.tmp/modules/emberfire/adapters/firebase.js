@@ -1,1 +1,0 @@
-/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/babel-cache_path-rrLXUhRU.tmp/modules/emberfire/adapters/firebase.js
