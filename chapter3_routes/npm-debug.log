@@ -1,0 +1,100 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'ember-query' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose install initial load of /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/package.json
+5 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/broccoli-asset-rev/package.json
+6 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli/package.json
+7 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-app-version/package.json
+8 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-babel/package.json
+9 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-content-security-policy/package.json
+10 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-dependency-checker/package.json
+11 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-htmlbars/package.json
+12 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-htmlbars-inline-precompile/package.json
+13 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-ic-ajax/package.json
+14 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-inject-live-reload/package.json
+15 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-qunit/package.json
+16 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-release/package.json
+17 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-sri/package.json
+18 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-cli-uglify/package.json
+19 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-data/package.json
+20 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-disable-proxy-controllers/package.json
+21 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/ember-export-application-global/package.json
+22 verbose installManyTop reading scoped package data from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/node_modules/emberfire/package.json
+23 info package.json emberfire@1.5.0 No license field.
+24 verbose readDependencies loading dependencies from /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/package.json
+25 silly cache add args [ 'ember-query', null ]
+26 verbose cache add spec ember-query
+27 silly cache add parsed spec { raw: 'ember-query',
+27 silly cache add   scope: null,
+27 silly cache add   name: 'ember-query',
+27 silly cache add   rawSpec: '',
+27 silly cache add   spec: '*',
+27 silly cache add   type: 'range' }
+28 silly addNamed ember-query@*
+29 verbose addNamed "*" is a valid semver range for ember-query
+30 silly addNameRange { name: 'ember-query', range: '*', hasData: false }
+31 silly mapToRegistry name ember-query
+32 silly mapToRegistry using default registry
+33 silly mapToRegistry registry https://registry.npm.taobao.org/
+34 silly mapToRegistry uri https://registry.npm.taobao.org/ember-query
+35 verbose addNameRange registry:https://registry.npm.taobao.org/ember-query not in flight; fetching
+36 verbose request uri https://registry.npm.taobao.org/ember-query
+37 verbose request no auth needed
+38 info attempt registry request try #1 at 13:22:16
+39 verbose request id 70ad93439e012a8d
+40 http request GET https://registry.npm.taobao.org/ember-query
+41 http 404 https://registry.npm.taobao.org/ember-query
+42 verbose headers { 'content-type': 'application/json',
+42 verbose headers   'cache-control': 'max-age=0',
+42 verbose headers   'content-length': '2',
+42 verbose headers   'accept-ranges': 'bytes',
+42 verbose headers   date: 'Tue, 29 Sep 2015 05:22:17 GMT',
+42 verbose headers   via: '1.1 varnish',
+42 verbose headers   age: '0',
+42 verbose headers   connection: 'close',
+42 verbose headers   'x-served-by': 'cache-nrt6126-NRT',
+42 verbose headers   'x-cache': 'MISS',
+42 verbose headers   'x-cache-hits': '0',
+42 verbose headers   'x-timer': 'S1443504137.806086,VS0,VE123' }
+43 silly get cb [ 404,
+43 silly get   { 'content-type': 'application/json',
+43 silly get     'cache-control': 'max-age=0',
+43 silly get     'content-length': '2',
+43 silly get     'accept-ranges': 'bytes',
+43 silly get     date: 'Tue, 29 Sep 2015 05:22:17 GMT',
+43 silly get     via: '1.1 varnish',
+43 silly get     age: '0',
+43 silly get     connection: 'close',
+43 silly get     'x-served-by': 'cache-nrt6126-NRT',
+43 silly get     'x-cache': 'MISS',
+43 silly get     'x-cache-hits': '0',
+43 silly get     'x-timer': 'S1443504137.806086,VS0,VE123' } ]
+44 verbose stack Error: Registry returned 404 for GET on https://registry.npm.taobao.org/ember-query
+44 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:239:14)
+44 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+44 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:368:22)
+44 verbose stack     at Request.emit (events.js:110:17)
+44 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1219:14)
+44 verbose stack     at Request.emit (events.js:129:20)
+44 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1167:12)
+44 verbose stack     at IncomingMessage.emit (events.js:129:20)
+44 verbose stack     at _stream_readable.js:908:16
+44 verbose stack     at process._tickCallback (node.js:355:11)
+45 verbose statusCode 404
+46 verbose pkgid ember-query
+47 verbose cwd /Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2
+48 error Darwin 14.5.0
+49 error argv "node" "/usr/local/bin/npm" "install" "ember-query"
+50 error node v0.12.4
+51 error npm  v2.10.1
+52 error code E404
+53 error 404 Registry returned 404 for GET on https://registry.npm.taobao.org/ember-query
+53 error 404
+53 error 404 'ember-query' is not in the npm registry.
+53 error 404 You should bug the author to publish it (or use the name yourself!)
+53 error 404 It was specified as a dependency of 'chapter3-routes2'
+53 error 404
+53 error 404 Note that you can also install from a
+53 error 404 tarball, folder, http url, or git url.
+54 verbose exit [ 1, true ]

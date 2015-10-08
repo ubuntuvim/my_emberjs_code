@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/jshinter-cache_path-b7dL6HX6.tmp/helpers/resolver.jshint.js

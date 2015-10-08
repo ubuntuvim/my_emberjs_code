@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/jshinter-cache_path-L9oQXmPD.tmp/routes/auth.jshint.js

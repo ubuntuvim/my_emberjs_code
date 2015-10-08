@@ -1,0 +1,9 @@
+{
+  "extends": "nightmare-mode",
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-underscore-dangle": 0
+  }
+}

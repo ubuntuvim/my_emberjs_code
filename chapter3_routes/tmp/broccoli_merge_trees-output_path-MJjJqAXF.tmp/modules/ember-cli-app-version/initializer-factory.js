@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/broccoli_merge_trees-input_base_path-Y2sq6h8q.tmp/0/modules/ember-cli-app-version/initializer-factory.js

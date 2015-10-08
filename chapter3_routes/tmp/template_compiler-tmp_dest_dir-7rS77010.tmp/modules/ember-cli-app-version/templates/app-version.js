@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/template_compiler-tmp_cache_dir-L6vhK6GW.tmp/0

@@ -1,0 +1,16 @@
+<!--  app/templates/favorites.hbs -->
+
+
+<h2>Song list</h2>
+<ul>
+{{#each model.songs as |item|}}
+	<li>{{item.name}}</li>
+{{/each}}
+</ul>
+<hr>
+<h2>Album list</h2>
+<ul>
+{{#each model.albums as |item|}}
+	<li>{{item.name}}</li>
+{{/each}}
+</ul>

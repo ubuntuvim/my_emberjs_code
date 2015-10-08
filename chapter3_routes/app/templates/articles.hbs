@@ -1,0 +1,42 @@
+<!--  app/templates/articles.hbs  -->
+
+<div class="col-md-4 col-xs-4">
+<!--
+<div>
+{{input value=title}}<br>
+{{textarea value=body cols="80" rows="3"}}<br>
+{{input value=category}}<br>
+
+<button {{action 'saveItem'}}>Save</button>
+<br><br>
+</div>	
+-->
+
+<ul>
+		输入分类：{{input value=category placeholder ='查询的分类'}}
+</ul>
+
+<ul>
+	<!-- 关键点：这里使用的是filteredArticles而不是从route获取的model -->
+	{{#each model as |item|}}
+		<li>
+			{{#link-to 'articles.article' item}} {{item.title}}--{{item.category}} {{/link-to}}
+		</li>	
+	{{/each}}
+</ul>
+
+<ul>
+	{{#link-to 'articles' (query-params category='java')}} java {{/link-to}}
+	<br>
+	{{#link-to 'articles' (query-params category='php')}} php {{/link-to}}
+	<br>
+	{{#link-to 'articles' (query-params category='')}} all {{/link-to}}
+</ul>
+
+
+
+</div>
+
+<div class="col-md-8 col-xs-8">
+{{outlet}}
+</div>

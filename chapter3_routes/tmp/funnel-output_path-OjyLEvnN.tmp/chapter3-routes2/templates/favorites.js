@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/template_compiler-tmp_dest_dir-ZGM6RrTp.tmp/chapter3-routes2/templates/favorites.js

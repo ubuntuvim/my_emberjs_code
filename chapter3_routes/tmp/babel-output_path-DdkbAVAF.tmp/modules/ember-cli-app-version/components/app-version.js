@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/babel-cache_path-onvn5dew.tmp/modules/ember-cli-app-version/components/app-version.js

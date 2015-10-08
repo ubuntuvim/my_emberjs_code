@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/jshinter-cache_path-VfBfPFUk.tmp/unit/models/post-test.jshint.js

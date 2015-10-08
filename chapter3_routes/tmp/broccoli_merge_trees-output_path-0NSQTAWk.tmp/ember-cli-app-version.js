@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/reexporter-tmp_cache_dir-7OJp94jr.tmp/reexports/ember-cli-app-version.js

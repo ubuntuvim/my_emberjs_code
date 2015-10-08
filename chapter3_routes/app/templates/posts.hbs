@@ -1,0 +1,17 @@
+<!-- app/templates/posts.hbs -->
+
+<div class="col-md-4 col-xs-4">
+<ul>
+	{{#each model as |item|}}
+		<li>
+			{{#link-to 'posts.post' item}}{{item.title}}{{/link-to}}
+		</li>	
+	{{/each}}
+</ul>
+
+
+</div>
+
+<div class="col-md-8 col-xs-8">
+{{outlet}}
+</div>

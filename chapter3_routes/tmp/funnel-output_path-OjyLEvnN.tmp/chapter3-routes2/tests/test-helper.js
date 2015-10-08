@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/babel-cache_path-171MjfBB.tmp/chapter3-routes2/tests/test-helper.js

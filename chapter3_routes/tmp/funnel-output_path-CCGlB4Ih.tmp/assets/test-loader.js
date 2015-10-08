@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/funnel-input_base_path-lUkzgdgI.tmp/0/bower_components/ember-cli-test-loader/test-loader.js

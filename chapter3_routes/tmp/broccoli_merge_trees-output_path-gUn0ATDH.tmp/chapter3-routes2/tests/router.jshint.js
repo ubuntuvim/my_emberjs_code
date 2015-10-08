@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/jshinter-output_path-tFOL7f7p.tmp/router.jshint.js

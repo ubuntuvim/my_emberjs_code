@@ -1,0 +1,1 @@
+/Users/ubuntuvim/codes/emberjs/emberjs_guides/chapter3_routes2/tmp/funnel-input_base_path-bEQ077Sv.tmp/0/initializer-factory.js

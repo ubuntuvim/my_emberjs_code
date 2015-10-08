@@ -1,0 +1,24 @@
+<!-- //app/templates/application.hbs -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+            <div class="navbar-header" href="#">
+                <!--  <a class="navbar-brand" href="#">Blog</a> -->
+                {{#link-to 'index' class="navbar-brand"}}Home{{/link-to}}
+            </div>
+            <ul class="nav navbar-nav">
+                <li>{{#link-to 'about'}}about{{/link-to}}</li>
+       			<li>{{#link-to 'posts'}}posts{{/link-to}}</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+    </div>
+</nav>
+
+<div class="container-fluid" style="margin-top: 70px;">
+<!-- 项目中其他所有的模板都是application的子模板，所以其他模板都会渲染到这里的 outlet上 -->
+{{outlet}}
+</div>
+
