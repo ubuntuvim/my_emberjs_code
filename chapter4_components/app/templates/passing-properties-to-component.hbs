@@ -1,0 +1,6 @@
+<!-- app/templates/passing-properties-to-component.hbs  -->
+
+{{#each model as |item|}}
+	<!-- 传递到组件blog-post第一个参数为数据的title值，第二个为body值 -->
+	{{passing-properties-to-component item.title item.body 'third value' 'fourth value'}}
+{{/each}}

@@ -1,0 +1,10 @@
+<!--  app/templates/wrapping-content-in-component-route.hbs  -->
+
+{{!wrapping-content-in-component title=model.title body=model.body}}
+<!--  调用组件的方式必须是以标签的形式，
+	模板编译渲染之后small标签和{{body}}这两行的内容会渲染到组件wrapping-content-in-component的{{yield}}助手上  -->
+{{#wrapping-content-in-component title=model.title}}
+	{{model.body}}
+	<small>by {{model.author}}</small>
+{{/wrapping-content-in-component}}
+

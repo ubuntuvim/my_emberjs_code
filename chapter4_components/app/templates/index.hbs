@@ -1,0 +1,10 @@
+<!-- app/templates/index.hbs  -->
+
+{{#each model as |item|}}
+	<!-- 根据组件名渲染不同的组件，第一个参数是组件名，第二个参数为传递到组件上显示的数据 -->
+	{{!component item.pn post=item}}
+
+	{{#blog-post title=item.title}}
+		{{item.body}}
+	{{/blog-post}}
+{{/each}}
