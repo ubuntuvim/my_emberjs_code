@@ -1,0 +1,19 @@
+<!--  app/templates/blog-post.hbs  -->
+
+<h1>{{model.title}}</h1>
+<h2>{{model.author}}</h2>
+
+<div class="intro">
+	{{model.intro}}
+</div>
+
+<hr>
+{{#if isExpanded}}
+	<button {{action 'toggleBody'}}>hide body</button>
+	<div class="body">
+		{{model.body}}
+	</div>
+{{else}}
+	<button {{action 'toggleBody'}}>Show body</button>
+{{/if}}
+

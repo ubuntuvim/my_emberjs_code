@@ -1,0 +1,6 @@
+<h1>Comments for {{post.title}}</h1>
+<ul>
+	{{#each model as |comment|}}
+		<li>{{comment.text}}</li>
+	{{/each}}
+</ul>
