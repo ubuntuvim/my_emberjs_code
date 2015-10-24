@@ -1,0 +1,35 @@
+<!--  app/templates/articles.hbs  -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-xs-4">
+			<ul class="list-group">
+			{{#each model as |item|}}
+				<li class="list-group-item">
+					<!--设置路由，路由的层级与router.js里定义的要一致 -->
+                 	{{#link-to 'articles.article' item.id}}
+						{{item.title}} -- <small>{{item.category}}</small> -- <small>{{item.author.username}}</small>
+					{{/link-to}}
+					<button {{action 'delById' item.id}}>删除</button>
+				</li>
+			{{/each}}
+			</ul>
+
+
+			<div>
+				title：{{input value=title}}<br>
+				body：<br> {{textarea value=body cols="40" rows="3"}}<br>
+				category: {{input value=category}}<br>
+				<br>
+				author: {{input value=username}}<br>
+				<button {{ action "saveItem"}}>保存</button>
+				<font color='red'>{{tipInfo}}</font>
+				{{debugger}}
+			</div>
+		</div>
+
+		<div class="col-md-8 col-xs-8">
+		{{outlet}}
+		</div>
+	</div>
+</div>

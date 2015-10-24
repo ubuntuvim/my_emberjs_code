@@ -1,0 +1,14 @@
+<!--  app/templates/articles/article.hbs  -->
+
+<h1>{{model.title}}</h1>
+<div class = "body">
+{{model.body}}
+</div>
+
+<div>
+<br><hr>
+更新测试<br>
+title: {{input value=model.title}}<br>
+body：<br> {{textarea value=model.body cols="80" rows="3"}}<br>
+<button {{action 'updateArticleById' model.id}}>更新文章信息</button>
+</div>
