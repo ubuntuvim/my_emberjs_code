@@ -1,0 +1,8 @@
+{{! app/templates/get-quotes.hbs }}
+
+<p>
+    <button {{action 'getQuote'}}>Get Random quote</button>
+</p>
+{{#if gotQuote}}
+    This is your quote: <b>{{quote}}</b>
+{{/if}}

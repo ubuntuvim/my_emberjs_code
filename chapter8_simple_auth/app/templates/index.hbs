@@ -1,0 +1,7 @@
+{{! app/templates/index.hbs }}
+
+{{#unless session.isAuthenticated}}
+    <div class="alert alert-info">
+        You can {{#link-to 'login' className="alert-link"}}log in {{/link-to}} with login <code>gonto</code> and password <code>gonto</code>.
+    </div>
+{{/unless}}

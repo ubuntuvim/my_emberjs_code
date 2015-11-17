@@ -1,0 +1,15 @@
+{{! app/templates/application.hbs }}
+
+<h2 id="title">This is my first auth proj</h2>
+
+{{#if session.isAuthenticated}}
+    <p>
+        <a {{action 'invalidateSession'}}>Logout</a>
+    </p>
+{{else}}
+    <p>
+        <a {{action 'sessionRequiresAuthentication'}}>Login</a>
+    </p>
+{{/if}}
+
+{{outlet}}
