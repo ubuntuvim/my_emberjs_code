@@ -4,11 +4,11 @@
 
 {{#if session.isAuthenticated}}
     <p>
-        <a {{action 'invalidateSession'}}>Logout</a>
+        <a {{action 'invalidateSession'}} style="cursor: pointer;">Logout</a>
     </p>
 {{else}}
     <p>
-        <a {{action 'sessionRequiresAuthentication'}}>Login</a>
+        <a {{action 'sessionRequiresAuthentication'}} style="cursor: pointer;">Login</a>
     </p>
 {{/if}}
 

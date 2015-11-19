@@ -3,7 +3,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    authenticator: 'authenticator: custom',
+    // authenticator: 'authenticator: custom',
 
     actions: {
         authenticate: function() {
