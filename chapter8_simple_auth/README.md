@@ -1,5 +1,8 @@
 # Chapter8-simple-auth
 
+### In this chapter, please refer to the following article.
+[http://120.24.90.140:2368/ember-application-authority-control/](http://120.24.90.140:2368/ember-application-authority-control/)
+
 [ember-simple-auth](http://ember-simple-auth.com/) reference to this project is completed, the main function is to achieve a simple user login permissions and other controls.
 
 ## Prerequisites
